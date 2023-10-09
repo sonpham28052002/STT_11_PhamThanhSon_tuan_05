@@ -3,18 +3,19 @@ import {View, Text, TouchableOpacity, StyleSheet,Image} from 'react-native'
 import {} from '@expo/vector-icons'
 import { NavigationContainer } from '@react-navigation/native';
 
-export default function SecondScreen(){
-    var [img,setImage] = React.useState("red")
+export default function SecondScreen({route,navigation}){
+    var [img,setImage] = React.useState(route.params)
+    console.log(route.params);
     return(
         <View style={styles.container}>
             <View style={styles.containerHeader}>
                 <Image
-                    style={{height:125, width:100 }}
+                    style={{height:135, width:110 }}
                     source={require(`../img/${img}.jpg`)}
                 />
                 <View style={styles.viewInfo}>
                     <Text style={{fontWeight:"600",fontSize:19, width:200}}>Điệm thoại Vsmart Joy 3 Hàng chính hãng</Text>
-                    <Text style={{fontWeight:"600",fontSize:15}} >Màu: Đỏ</Text>
+                    <Text style={{fontWeight:"600",fontSize:15}} >Màu: {img}</Text>
                     <View style={{fontWeight:"600",flexDirection:"row"}}>
                         <Text style={{fontWeight:"600",fontSize:15}}>Cũng cấp bởi: </Text>
                         <Text style={{fontWeight:"bold", fontSize:15}}>Tiki Tradding</Text>
@@ -38,6 +39,7 @@ export default function SecondScreen(){
                             justifyContent:"center",
                             marginTop:20
                         }}
+                        onPress={()=>{ navigation.navigate('firstScreen',img)}}
                 >
                     <Text style={{fontSize:25, fontWeight:"bold", textAlign:"center", color:"white"}}>Xong</Text>
                 </TouchableOpacity>
@@ -52,7 +54,7 @@ let styles = StyleSheet.create({
         flex:1,
 
     },containerHeader:{
-        flex:1,
+        flex:2,
         flexDirection:"row",
         alignItems:"center",
         padding:5,
@@ -60,7 +62,7 @@ let styles = StyleSheet.create({
         
     },
     containerBody:{
-        flex:5,
+        flex:6,
         marginTop:10,
         backgroundColor:"#C4C4C4",
         alignItems:"center"
