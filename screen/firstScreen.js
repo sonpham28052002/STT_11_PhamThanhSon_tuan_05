@@ -1,14 +1,13 @@
 import React from "react";
 import { Image, Text, View, TouchableOpacity, StyleSheet } from "react-native";
 import { FontAwesome, MaterialIcons, AntDesign } from "@expo/vector-icons";
-import { NavigationContainer } from "@react-navigation/native";
 
-export default function FirstScreen({ route,navigation }) {
+export default function FirstScreen({route,navigation}) {
   return (
     <View style={styles.container}>
       <View style={styles.containerHeader}>
         <Image
-          style={{ height: "98%", width: "80%" }}
+          style={{ height: "100%", width: "90%" }}
           source={require(`../img/${route.params?route.params:"blue"}.jpg`)}
         />
       </View>
@@ -62,7 +61,7 @@ export default function FirstScreen({ route,navigation }) {
           <Text style={{ fontWeight: "bold", fontSize: 25 }}>1.790.000 đ</Text>
           <Text
             style={{
-              textDecorationLine: "line-through",
+              textDecorationLine: "line-throutegh",
               marginBottom: 5,
               color: "gray",
               fontSize: 17,
@@ -72,8 +71,8 @@ export default function FirstScreen({ route,navigation }) {
             1.790.000 đ
           </Text>
         </View>
-        <View style={{ flexDirection: "row", marginTop: 10 }}>
-          <Text style={{ fontWeight: "bold", color: "red" }}>
+        <View style={{ flexDirection: "row", marginTop: 10, alignItems:"flex-end", }}>
+          <Text style={{ fontWeight: "bold", color: "red", marginRight:20 }}>
             Ở ĐÂU RẺ HƠN HOÀN TIỀN
           </Text>
           <AntDesign name="questioncircleo" size={24} color="black" />
@@ -130,7 +129,7 @@ let styles = StyleSheet.create({
   },
   containerBody: {
     flex: 4,
-    backgroundColor: "white",
+    backgroutendColor: "white",
     paddingHorizontal: 20,
   },
   textInfo: {

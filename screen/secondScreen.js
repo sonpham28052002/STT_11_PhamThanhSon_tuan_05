@@ -1,11 +1,10 @@
 import React from "react";
 import {View, Text, TouchableOpacity, StyleSheet,Image} from 'react-native'
-import {} from '@expo/vector-icons'
-import { NavigationContainer } from '@react-navigation/native';
 
 export default function SecondScreen({route,navigation}){
+    console.log(navigation);
+    console.log(route);
     var [img,setImage] = React.useState(route.params)
-    console.log(route.params);
     return(
         <View style={styles.container}>
             <View style={styles.containerHeader}>
